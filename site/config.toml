@@ -95,8 +95,8 @@ dataAttrs = "" # "data-isso='https://isso.example.com' data-isso-require-author=
 enable = true
 apiEndpoint = "https://api.staticman.net/v2/entry"
 maxDepth = 2
-username = "MunifTanjim"
-repository = "minimo"
+username = "grrlic"
+repository = "grrlic-blog"
 
 # Utterances: https://utteranc.es
 [params.comments.utterances]
@@ -106,8 +106,8 @@ label = ""
 theme = "github-light"
 
 [params.comments.utterances.github]
-username = "MunifTanjim"
-repository = "minimo"
+username = "grrlic"
+repository = "grrlic-blog"
 
 [params.search]
 client = "fuse" # algolia / fuse / lunr
@@ -130,7 +130,7 @@ page = "/:slug/"
 name = "Repo"
 weight = -10
 identifier = "repository"
-url = "https://github.com/MunifTanjim/minimo"
+url = "https://github.com/grrlic/grrlic-blog"
 
 [blackfriday]
 hrefTargetBlank = true
