@@ -1,6 +1,13 @@
-{{ define "main" }}
+{{ partial "header" . }}
 
-{{ partial "jumbotron" (dict "imageUrl" "/img/7.jpg" "title" "This is where the heading goes" "subtitle" "This is where the subtitle goes") }}
-{{ .Content }}
+<article lang='{{ .Params.lang | default .Lang }}' class='entry'>
+  {{ partial "entry/header" . }}
+  {{ partial "entry/cover" . }}
+  {{ partial "entry/toc" . }}
+  {{ partial "entry/content" . }}
+  {{ partial "entry/footer" . }}
+</article>
+{{ partial "nav/entry_nav" . }}
+{{ partial "entry/comments" . }}
 
-{{ end }}
+{{ partial "footer" . }}

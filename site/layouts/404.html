@@ -1,6 +1,26 @@
-{{ define "main" }}
+{{ partial "header" . }}
 
-<h1>Nothing Here...</h1>
-<h3><a href="{{ "/" | relURL }}">Go Home</a></h3>
+<div class='entry'>
+  <div class='container entry-content'>
+    <span class='screen-reader-text'>
+      {{- .Site.Params.info.title404 | default .Title -}}
+    </span>
+    <figure class='gopher'>
+      <a href='{{ "/" | relLangURL }}'>
+        <img src='{{ ( .Site.Params.assets.gopher | default "assets/gopher.png" ) | relURL }}' alt='{{ i18n "gopher" }}'/>
+        <span class='screen-reader-text'>
+          {{- i18n "goHome" -}}
+        </span>
+      </a>
+      <figcaption>
+        <h1 class='title'>
+          <a href='{{ "/" | relLangURL }}'>
+            {{- .Site.Params.info.title404 | default .Title -}}
+          </a>
+        </h1>
+      </figcaption>
+    </figure>
+  </div>
+</div>
 
-{{ end }}
+{{ partial "footer" . }}

@@ -1,13 +1,19 @@
-{{ define "main" }}
+{{ partial "header" . }}
 
-{{ partial "jumbotron" (dict "imageUrl" .Params.image "title" .Title "subtitle" .Params.subtitle) }}
-
-{{ partial "short-text" .Params.blurb}}
-
-{{ partial "2-up" .Params }}
-
-{{ partial "text-and-image" (dict "heading" .Params.values.heading "text" .Params.values.text "buttonText" "Read more" "buttonLink" "/values") }}
-
-{{ partial "blog" . }}
-
+{{ if .Content }}
+<div class='entry'>
+  {{ partial "entry/cover" . }}
+  {{ partial "entry/content" . }}
+</div>
 {{ end }}
+
+{{- $homepageWidgets := .Site.Params.widgets.homepage -}}
+{{- if $homepageWidgets -}}
+<div class='home-widgets'>
+  <div class='container sep-before'>
+    {{- partial "extras/widget_area" ( dict "Widgets" $homepageWidgets "Scope" . ) -}}
+  </div>
+</div>
+{{- end -}}
+
+{{ partial "footer" . }}
